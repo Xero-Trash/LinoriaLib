@@ -194,7 +194,6 @@ local SaveManager = {} do
 		assert(self.Library, 'Must set SaveManager.Library')
 
 		local section = tab:AddRightGroupbox('Configuration')
-
 		section:AddDropdown('SaveManager_ConfigList', { Text = 'Config list', Values = self:RefreshConfigList(), AllowNull = true })
 		section:AddInput('SaveManager_ConfigName',    { Text = 'Config name' })
 
@@ -253,9 +252,8 @@ local SaveManager = {} do
 		end)
 
 		SaveManager.AutoloadLabel = section:AddLabel('Current autoload config: none', true)
-        section:AddLabel('Setting')
    
-        section:AddLabel('Farming - Setting')
+        section:AddLabel('Farming - Setting ***')
         section:AddToggle('Fast_Attack', {
             Text = 'Fast Attack',
             Default = getgenv().Setting_table.Fastattackx,

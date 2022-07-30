@@ -253,7 +253,7 @@ local SaveManager = {} do
 		end)
 
 		SaveManager.AutoloadLabel = section:AddLabel('Current autoload config: none', true)
-        local FarmModeOtherSelection = Tabs.Main:AddRightTabbox()
+        local FarmModeOtherSelection = Tabs.tab:AddRightTabbox()
         local FarmModeSelection = FarmModeOtherSelection:AddTab('Farm Mode')
         local SettingSelction = FarmModeOtherSelection:AddTab('Setting')
     

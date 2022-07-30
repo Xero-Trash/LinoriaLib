@@ -789,9 +789,19 @@ local SaveManager = {} do
           UseCode("Starcodeheo")
           UseCode("Bluxxy")
     end)
-    
+		
+         section:AddLabel('Tool')
+        local CopyPotions = section:AddButton('Copy Position', function()
+    setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))  
+    end)
+	local CopyPotionshum = section:AddButton('Copy Position', function()
+    setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))  
+    end)
     ReemCodeSelect:AddTooltip('This is a RedeemCode Select')
     ReemCodeAll:AddTooltip('This is a sub Reddem All Code')
+		    CopyPotions:AddTooltip('This is a sub Copy Position')
+		    CopyPotionshum:AddTooltip('This is a sub Copy HumanoidRootPart Position')
+		
 		if isfile(self.Folder .. '/settings/autoload.txt') then
 			local name = readfile(self.Folder .. '/settings/autoload.txt')
 			SaveManager.AutoloadLabel:SetText('Current autoload config: ' .. name)

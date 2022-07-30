@@ -253,10 +253,10 @@ local SaveManager = {} do
 		end)
 
 		SaveManager.AutoloadLabel = section:AddLabel('Current autoload config: none', true)
-        local SettingSelction = section:AddTab('Setting')
+        section:AddLabel('Setting')
    
-        SettingSelction:AddLabel('Farming - Setting')
-        SettingSelction:AddToggle('Fast_Attack', {
+        section:AddLabel('Farming - Setting')
+        section:AddToggle('Fast_Attack', {
             Text = 'Fast Attack',
             Default = getgenv().Setting_table.Fastattackx,
             Tooltip = 'Fast Attack',
@@ -341,7 +341,7 @@ local SaveManager = {} do
         end)
     end
     end)
-    SettingSelction:AddToggle('Bringmon', {
+    section:AddToggle('Bringmon', {
             Text = 'Bring Mob',
             Default = true,
             Tooltip = 'Bring Monster',
@@ -667,7 +667,7 @@ local SaveManager = {} do
                 end)
             end
         end)
-        SettingSelction:AddToggle('Auto_Set_Spawn', {
+        section:AddToggle('Auto_Set_Spawn', {
             Text = 'Auto Set Spawn',
             Default = true,
             Tooltip = 'Set Spawn',
@@ -686,7 +686,7 @@ local SaveManager = {} do
             end
         end)
     end)
-    SettingSelction:AddToggle('AutoACCC', {
+    section:AddToggle('AutoACCC', {
         Text = 'Auto Accessories',
         Default = getgenv().Setting_table.AutoAccessories,
         Tooltip = 'Accessories',
@@ -725,7 +725,7 @@ local SaveManager = {} do
         end
     end)
     
-    SettingSelction:AddLabel('Code - Redeem')
+    section:AddLabel('Code - Redeem')
     local AllCodeList = {
     "UPD16",
     "2BILLION",
@@ -750,7 +750,7 @@ local SaveManager = {} do
     "Starcodeheo",
     "Bluxxy",
     }
-    SettingSelction:AddDropdown('Scode', {
+    section:AddDropdown('Scode', {
         Values = AllCodeList,
         Default = 1, 
         Multi = true,
@@ -761,7 +761,7 @@ local SaveManager = {} do
     Options.Scode:OnChanged(function()
         getgenv().Code = Options.Scode.Value
     end)
-    local ReemCodeSelect = SettingSelction:AddButton('Redeem Code', function()
+    local ReemCodeSelect = section:AddButton('Redeem Code', function()
         game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(getgenv().Code)    
     end)
     local ReemCodeAll = ReemCodeSelect:AddButton('Redeem All Code', function()
